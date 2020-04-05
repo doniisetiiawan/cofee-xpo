@@ -15,6 +15,7 @@ export default (Models) => {
 
   router.post('/user', user.create);
   router.post('/meeting', [filter.loadUser], meeting.create);
+  router.get('/followup/:meetingId/:reviewedUserId/:feedback', meeting.followUp);
 
   router.use(errorHandler.catchAll);
 
